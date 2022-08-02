@@ -3,7 +3,8 @@
 
 source 'https://rubygems.org'
 
-gem 'asciidoctor'
+# gem 'asciidoctor'
+gem 'asciidoctor', '1.5.7.1'
 
 # gem 'awestruct', '0.6.1'
 #gem 'awestruct', github: 'awestruct/awestruct', branch: 'master'
