@@ -6,7 +6,7 @@ tags: ["학습", "AWS"]
 categories: []
 date: 2021-05-06
 lastmod: 2021-05-07
-draft: true
+draft: false
 author: "MinHo Jung"
 authorLink: "https://anew0m.netlify.app/"
 license: "CC BY-NC-ND 4.0"
