@@ -313,9 +313,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # whether to enable the table of the contents
       enable = true
       #  whether to keep the static table of the contents in front of the post
-      keepStatic = true
+      keepStatic = false
       # whether to make the table of the contents in the sidebar automatically collapsed
-      auto = true
+      auto = false
     #  KaTeX mathematical formulas
     [params.page.math]
       enable = true
@@ -581,6 +581,24 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 6
+#  [markup.asciidocExt]
+#    extensions = ["asciidoctor-html5s", "asciidoctor-diagram"]
+#    workingFolderCurrent = true
+#    [markup.asciidocExt.attributes]
+#      my-base-url = "https://example.com/"
+#      my-attribute-name = "my value"
+  [markup.asciidocExt]
+    backend = 'html5'
+    extensions = []
+    failureLevel = 'fatal'
+    noHeaderOrFooter = true
+    preserveTOC = false
+    safeMode = 'unsafe'
+    sectionNumbers = false
+    trace = false
+    verbose = false
+    workingFolderCurrent = false
+    [markup.asciidocExt.attributes]
 
 # Sitemap config
 [sitemap]
@@ -685,3 +703,17 @@ defaultContentLanguage = "en"
 #      name = "Categories"
 #      url = "/categories/"
 #      title = ""
+
+[security]
+  enableInlineShortcodes = false
+
+[security.exec]
+  allow = ["^dart-sass-embedded$", "^go$", "^npx$", "^postcss$", "^asciidoctor$"]
+  osEnv = ["(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM|RUBYLIB)$"]
+
+[security.funcs]
+  getenv = ["^HUGO_"]
+
+[security.http]
+  methods = ["(?i)GET|POST"]
+  urls = [".*"]
