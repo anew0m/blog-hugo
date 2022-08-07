@@ -1,0 +1,45 @@
+---
+title: "(기초) AWS - Lambda"
+subtitle: "AWS에 대해 알아봅니다."
+description: ""
+tags: ["학습", "AWS"]
+categories: ["IT"]
+date: 2021-05-14
+lastmod: 2021-05-14
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= (기초) AWS - Lambda
+
+== Lambda
+- Serverless의 주축을 담당
+- Events를 통하여 Lambda를 실행시킴
+- NodeJS, Python, Java, GO 등 다양한 언어 지원
+- Lambda Function
+- Lambda -> 다른 서비스 호출
+
+=== Lambda 비용
+- Lambda Function이 실행될때만 돈 지불
+- 매달 1,000,000 함수 호출까지 무료
+
+=== Lambda 기타
+- 최대 300초(5분) 런타임 시간 허용 (Lamda 코드 최대 5분 실행시간 제공)
+- 512MB의 일시적인 디스크 공간 제공(/tmp/)
+- 최대 50MB Deployment Package 허용(50MB가 초과될시 S3 버켓 사용)
+
+=== Lambda 사용용례
+- S3 -> Lambda -> DB
+ * S3(PutObject) -> Lambda(데이터변환, 불필요한 데이터 삭제) -> DB(정제된 데이터 업로드)
+- IoT -> Lambda -> SNS
+ * IoT(Topic 속도) -> Lambda(Km -> Mi) -> SNS(속도 게시)

@@ -1,0 +1,153 @@
+---
+title: "핸즈온 머신러닝 1장 한눈에 보는 머신러닝 - 1.4 머신러닝 시스템의 종류"
+subtitle: "데이터분석 관련 책 `핸즈온 머신러닝 2판`의 1장 1.4절 머신러닝 시스템의 종류 요약 및 정리"
+description: ""
+tags: ["학습", "빅데이터"]
+categories: ["IT"]
+date: 2020-09-19
+lastmod: 2020-09-19
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= 핸즈온 머신러닝 1장 한눈에 보는 머신러닝 - 1.4 머신러닝 시스템의 종류
+
+---
+== 한눈에 보는 머신러닝
+---
+=== https://rocketdan.netlify.app/handsonml2_01-1[머신러닝이란?]
+---
+=== https://rocketdan.netlify.app/handsonml2_01-2[왜 머신러닝을 사용하는가?]
+---
+=== https://rocketdan.netlify.app/handsonml2_01-3[애플리케이션 사례]
+---
+=== https://rocketdan.netlify.app/handsonml2_01-4[머신러닝 시스템의 종류]
+
+****
+* 지도, 비지도, 준지도, 강화 학습
+** 사람의 감독하에 훈련 여부
+
+* 배치 학습, 온라인 학습, 외부 메모리 학습
+** 실시간으로 점진적으로 학습 여부
+
+* 사례 기반 학습과 모델 기반 학습
+** 데이터를 비교하는지 아니며 패턴을 발견하여 예측 모델을 만드는 것인지
+****
+
+. 지도 학습, 비지도 학습, 준지도 학습, 강화 학습
+* 학습하는 동안의 감독 형태나 정보량에 따라 분류
+
+.. 지도 학습(supervised learning)
+* 알고리즘을 주입하는 훈련 데이터에 레이블(label)이라는 원하는 답이 포함
+* 분류(classification)와 회귀(regression) 사용하며, 분류와 회귀를
+** 분류의 예로 스팸 필터
+** 회귀의 예로 예측 변수(predictor variable)라 부르는 특성(feature)을 사용해 타깃(target) 중고차 가격 수치 예측
+... 지도 학습 알고리즘
+* k-최근접 이웃(k-nearest neighbors)
+* 선형 회귀(linear regression)
+* 로지스틱 회귀(logistic regression)
+* 서포트 벡터 머신(support vector machine; SVM)
+* 결정 트리(decision tree)와 랜덤 포레스트(random forest)
+* 신경망(neural networks)
+** 일부 신경망 구조는 비지도/준지도 학습일 수 있음
+
+.. 비지도 학습(unsupervised learning)
+* 알고리즘을 주입하는 훈련 데이터에 레이블(label)이 없음
+... 비지도 학습 알고리즘
+* 군집(clustering)
+** 비슷한 유형끼리 그룹으로 묶는 알고리즘
+** k-평균(k-means)
+** DBSCAN
+** 계층 군집 분석(hierarchical cluster analysis; HCA)
+** 이상치 탐지(outlier detection)
+** 특이치 탐치(novelty detection)
+** 원-클래스(one-class SVM)
+** 아이솔레이션 포레스트(isolation forest)
+
+* 시각화(Visualization)와 차원 축소(dimensionality reduction)
+** 시각화는 도식화가 가능한 2D/3D 표현을 만들어주며, 차원 축소는 너무 많은 정보를 잃지 않으면서 데이터를 간소화
+** 주성분 분석(principal component analysis; PCA)
+** 커널(kernel) PCA
+** 지역적 선형 임베딩(locally-linear embedding; LLE)
+** t-SNE(t-distributed stochastic neighbor embedding)
+
+* 연관 규칙 학습(association rule learning)
+** 대량의 데이터에서 특성 간의 흥미로운 관계를 찾음
+** 어프라이어리(Apriori)
+** 이클렛(Eclat)
+
+.. 준지도 학습(semisupervised learning)
+* 레이블이 일부만 있는 학습으로 지도 학습과 비지도 학습의 조합으로 이루어짐
+
+.. 강화 학습(reinforcement learning)
+* 학습하는 시스템을 에이전트라고 부르며 환경(environment)을 관찰해서 행동(action)을 실행하고 그 결과로 보상(reward)/벌점(penalty)을 받음
+* 따라서 보상을 얻기 위해 정책(policy)라고 불리는 최상의 전략을 스스로 학습
+** 정책은 주어진 상황에서 에이전트가 어떤 행동을 선택해야 할지 정의
+
+
+. 배치 학습, 온라인 학습, 외부 메모리 학습
+* 입력 데이터의 스트림(stream)부터 점진적 학습 여부
+
+.. 배치 학습(batch learning)
+* 오프라인 학습(offline learning)이라고도 함
+* 배치 작업이기에 시스템이 점진적으로 학습할 수 없으며, 학습한 것을 적용만 할 수 있음
+
+.. 온라인 학습(online learning)
+* 빠른 변화에 스스로 적응해야 하는 시스템에 적합
+* 모델을 훈련하고 제품에 론칭한 뒤에도 새로운 데이터가 들어오면 계속 학습
+* 데이터를 순차적으로 한 개씩 또는 미니배치(mini-batch)라 부르는 작은 묶음 단위로 주입하여 시스템을 훈련시킴
+
+... 학습률(learning rate)
+* 변화하는 데이터에 얼마나 빠르게 적응할 것인지
+* 학습률을 높이면 빠르게 적응하지만, 예전 데이터는 잊혀짐
+* 학습률을 낮추면 더디게 적응하지만, 새로운 데이터에 있는 데이터 잡음이나 대표선 없는 데이터 포인트에 덜 민감
+
+.. 외부 메모리 학습(out-of-core learning)
+* 보통 오프라인으로 실행되나 온라인에서 사용될 수 있음
+* 점진적 학습(incremental learning) 사용
+
+
+
+. 사례 기반 학습과 모델 기반 학습
+* 일반화 방법에 따라 분류
+
+.. 사례 기반 학습(instance-based learning)
+* 기존의 A 데이터와 새로운 B 데이터의 유사도(similarity)를 측정하여 데이터 학습하고
+데이터를 비교하는 식으로 일반화
+
+
+.. 모델 기반 학습(model-based learning)
+* 샘플들의 모델을 만들어 예측(prediction)
+* 모델(model)은 모델의 종류나 완전히 정의된 모델 구조나 예측에 사용하기 위해 훈련된 최종 모델을 의미
+* 모델 선택(model selection)은 모델의 종류나 완전히 정의된 모델 구조를 선택하는 것
+* 모델 훈련(model training)은 훈련 데이터에 가장 잘 맞는 모델 파라미터를 찾기 위해 알고리즘을 실행하는 것
+
+... 작업 순서
+* 데이터 분석
+* 모델 선택
+* 훈련 데이터로 모델 훈련
+* 새로운 데이터에 모델을 적용해 예측/추론(inference)
+
+... 모델 기반 학습 상세
+* 모델은 두 개의 모델 파라미터(model parameter) asciimath:[theta_(0)]과 asciimath:[theta_(1)]을 가짐
+* 모델이 좋은지 측정하는 효용 함수(utility function) 또는 적합도 함소(fitness function)를 정의
+* 모델이 나쁜지 측정하는 비용 함수(cost function) 정의
+
+
+---
+=== https://rocketdan.netlify.app/handsonml2_01-5[머신러닝의 주요 도전 과제]
+---
+=== https://rocketdan.netlify.app/handsonml2_01-6[테스트와 검증]
+---
+=== https://rocketdan.netlify.app/handsonml2_01-7[연습문제]
+---

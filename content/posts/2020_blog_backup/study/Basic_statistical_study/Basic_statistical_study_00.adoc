@@ -1,0 +1,25 @@
+---
+title: "기초 통계분석 - 00"
+subtitle: "R 통계분석(제대로 알고 쓰는) - 이윤환저'의 책을 통해 기초 통계분석 학습"
+description: ""
+tags: ["학습", "빅데이터"]
+categories: ["IT"]
+date: 2020-05-16
+lastmod: 2020-05-16
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= 기초 통계분석 - 00
+
+== 작성중

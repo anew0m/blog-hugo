@@ -1,0 +1,105 @@
+---
+title: "핸즈온 머신러닝 1장 한눈에 보는 머신러닝 - 1.3 애플리케이션 사례"
+subtitle: "데이터분석 관련 책 `핸즈온 머신러닝 2판`의 1장 1.3절 애플리케이션 사례 요약 및 정리"
+description: ""
+tags: ["학습", "빅데이터"]
+categories: ["IT"]
+date: 2020-09-19
+lastmod: 2020-09-19
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= 핸즈온 머신러닝 1장 한눈에 보는 머신러닝 - 1.3 애플리케이션 사례
+
+---
+== 한눈에 보는 머신러닝
+---
+=== https://rocketdan.netlify.app/handsonml2_01-1[머신러닝이란?]
+---
+=== https://rocketdan.netlify.app/handsonml2_01-2[왜 머신러닝을 사용하는가?]
+---
+=== https://rocketdan.netlify.app/handsonml2_01-3[애플리케이션 사례]
+
+****
+* 분류, 구분
+* 진단, 예측, 감지, 추천
+****
+
+. 텍스트
+* 자동으로 뉴스 기사를 분류
+** 텍스트 분류 작업, 자연어 처리(natural language processing; NLP) 작업
+** 순환 신경망(recurrent neural network; RNN), 합성곱 신경망(convolutional neural network; CNN), 트랜스포머(Transformer)를 사용해 해결
+
+* 토론 포럼에서 부정적인 코멘트를 자동 구분하기
+** 텍스트 분류 작업
+** 자연어 처리(natural language processing; NLP) 도구 사용
+
+* 긴 문서를 자동 요약
+** 텍스트 요약
+** 자연어 처리(natural language processing; NLP) 도구 사용
+
+* 챗봇 또는 개인 비서 만들기
+** 자연어 이해(natural language understanding; NLU)와 질문-대답(question-answering) 모듈을 포함해
+여러가지 자연어 처리(natural language processing; NLP) 컴포넌트 필요
+
+
+. 음성/영상
+* 생산라인에서 제품 이미지를 분석해 자동 분류
+** 이미지 분류 작업
+** 일반적으로 합성곱 신경망(convolutional neural network; CNN)을 사용하여 수행
+
+* 뇌를 스캔하여 종양 진단
+** 시맨틱 분할 작업
+** 일반적으로 합성곱 신경망(convolutional neural network; CNN)을 사용하여 이미지의 각 픽셀을 분류
+
+* 음성 명령에 반응하는 앱 만들기
+** 음성 인식 작업
+** 순환 신경망(recurrent neural network; RNN), 합성곱 신경망(convolutional neural network; CNN), 트랜스포머(Transformer)를 사용
+
+
+. 기타
+* 다양한 성능 지표를 기반으로 회사의 내년도 수익 예측
+** 회귀 작업(숫자로 값을 예측)
+** 선형 회귀(linear regression)나 다항 회귀(polynomial regression) 모델, 회귀 SVM(support vector machine), 회귀 랜덤 포레스트(random forest),
+인공신경망(artificial neural network)과 같은 회귀 모델을 사용해서 해결
+** 지난 성능 지표의 시퀀스를 고려한다면 한다면
+순환 신경망(recurrent neural network; RNN), 합성곱 신경망(convolutional neural network; CNN), 트랜스포머(Transformer)를 사용
+
+* 신용 카드 부정 거래 감지
+** 이상치 탐지 작업
+
+* 구매 이력을 기반으로 고객을 나누고 각 집합마다 다른 마케팅 전략 계획하기
+** 군집(clustering)
+
+* 고차원의 복잡한 데이터셋을 명확하고 의미 있는 그래프로 표현
+** 데이터 시각화 작업
+** 차원축소(dimensionality reduction) 기법 많이 사용
+
+* 과거 구매 이력을 기반으로 고객이 관심을 가질 수 있는 상품 추천
+** 추천 시스템
+** 데이터를 인공 신경망에 주입하고 그 결과물로 상품 추천
+
+* 지능형 게임 봇 만들기
+** 보통 강화 학습(reinforcement learning; RL)으로 해결
+
+
+---
+=== https://rocketdan.netlify.app/handsonml2_01-4[머신러닝 시스템의 종류]
+---
+=== https://rocketdan.netlify.app/handsonml2_01-5[머신러닝의 주요 도전 과제]
+---
+=== https://rocketdan.netlify.app/handsonml2_01-6[테스트와 검증]
+---
+=== https://rocketdan.netlify.app/handsonml2_01-7[연습문제]
+---

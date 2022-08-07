@@ -1,0 +1,57 @@
+---
+title: "(응용) AWS - Advanced S3"
+subtitle: "AWS에 대해 알아봅니다."
+description: ""
+tags: ["학습", "AWS"]
+categories: ["IT"]
+date: 2021-05-15
+lastmod: 2021-05-15
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= (응용) AWS - Advanced S3
+
+== Advanced S3
+포퍼먼스 극대화 방안
+
+=== S3 스토리지 클래스 : Glacier
+- 거의 접근하지 않을 데이터 저장 시 유용
+ * 실시간은 부적절
+- 매우 저렴한 비용
+- 데이터 접근시 대략 4-5시간 소요
+
+=== Key 이름 정하기
+- Key = Object 이름
+- 버켓 Key를 생성할 때 random value 삽입!
+ * 높은 TPS 처리시 효율적
+ * YYYY-MM-DD와 같은 datetime 형태 비추
+ ** aws-learner-bucket/*2021*-03-24_2498124.jpg
+ *** aws-learner-bucket/*8241251*-2021-03-24_2498124.jpg
+ ** aws-learner-bucket/*2021*-03-24_8363136.jpg
+ *** aws-learner-bucket/*6349310*-2021-03-24_8363136.jpg
+ ** aws-learner-bucket/*2021*-03-24_7327513.jpg
+ *** aws-learner-bucket/*9847323*-2021-03-24_7327513.jpg
+- S3 버켓은 prefix 가 2021로 되어있을 시 하나의 파티션으로 이룰려고 하기 때문에 한쪽으로 치우쳐져 과부하가 올 수 있음!
+ * 따라서 random value를 통해 prefix를 임의의 값으로 변경
+
+=== 지역(Region) 설정
+- 여러개의 버켓을 사용중이라면 되도록 하나의 지역으로 통일할 것
+ * 그 외 다른 AWS 인스턴스도 동일.
+ * 같은 지역에 있어야 지연을 줄일 수 있음
+
+=== S3 Transfer Acceleration
+- S3에 파일을 업로드할 때 직접 올리는게 아니라 고유 URL 사용
+ * 이 때 Cloud Front 에서 사용되었던 Edge Location 개념이 등장
+- 사용자가 S3 로 파일을 전송할 때
+ * 사용자 -> Edge Location -> Orgin

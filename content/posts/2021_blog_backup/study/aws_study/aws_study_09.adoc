@@ -1,0 +1,139 @@
+---
+title: "(기초) AWS - DynamoDB"
+subtitle: "AWS에 대해 알아봅니다."
+description: ""
+tags: ["학습", "AWS"]
+categories: ["IT"]
+date: 2021-05-14
+lastmod: 2021-05-14
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= (기초) AWS - DynamoDB
+
+== DynamoDB
+- NoSQL(Not Only SQL) 데이터베이스
+- 매우 빠른 쿼리 속도
+- Auto-Scaling 기능 탑재
+- Key-Value 데이터 모델 지원
+- 테이블 생성시 스키마 생성 필요 없음
+- 모바일, 웹, IoT데이터 사용시 추천됨
+- SSD 스토리지 사용
+- 테이블(Table)
+- 아이템(Items) - 행(row)과 개념이 비슷함
+- 특징(Attributes) - 열(column)과 개념이 비슷함
+- Key-Value (Key : 데이터의 이름, Value : 데이터 자신)
+ * 예) JSON, XML
+
+=== DynamoDB - Primary Keys (PK)
+- PK를 사용하여 데이터 쿼리
+- DynamoDB에는 두가지의 PK 유형이 있음
+
+==== 파티션키(Partition Key)
+- 고유 특징(Unique Attribute)
+- 실제 데이터가 들어가는 위치를 결정해줌
+- 파티션키 사용시 동일한 두개의 데이터가 같은 위치에 저장될 수 없음!
+
+==== 복합키(Composite Key)
+- 파티션키(Partition Key) + 정렬키(Sort Key)
+ * 예) 똑같은 고객이 다른 날짜에 다른 물건을 구매
+ * 파티션키 : 고객아이디, 정렬키 : 날짜(Timestamp)
+- 같은 파티션키의 데이터들은 같은 장소에 보관, 드 다음 정렬키에 의해 데이터가 정렬됨
+
+==== 데이터 예시
+----
+{
+    "Cusomer_id" : "28942",
+    "Transaction_id" : "g9s4dd2",
+    "Item_purchased" : "sofa",
+    "Store_location" : "seoul",
+    "Transaction_date" : "2020-10-16 14:20:00"
+}
+----
+
+=== DynamoDB 데이터 접근 관리
+- AWS IAM으로 관리할 수 있음
+ * 테이블 생성과 접근 권한을 부여할 수 있음
+ * 특정 테이블만, 특정 데이터만 접근 가능케 해주는 특별한 IAM 역할 존재
+
+
+== Index
+- 특정 컬럼만을 사용하여 쿼리
+- 테이블 전체가 아닌 기준점(pivot)을 사용해 쿼리가 이루어짐
+- 매우 큰 쿼리 성능 효과
+- 두가지의 Index 유형 존재
+ * Local Secondary Index
+ * Global Secondary Index
+
+=== Local Secondary Index (LSI)
+- 테이블 생성시에만 정의해 줄 수 있음
+- 따라서 테이블 생성 후 변경, 삭제가 불가능
+- 똑같은 파티션키 사용, 그러나 다른 정렬키 사용
+
+=== Global Secondary Index (GSI)
+- 테이블 생성후에도 추가, 변경, 삭제 가능
+- 다른 파티션키, 정렬키 사용
+
+== Query VS Scan
+=== Query
+- Primary Key를 사용하여 데이터 검색
+- Query 사용시 모든 데이터(컬럼) 반환
+- ProjectionExpression 파라미터
+
+[%header, cols="2,2,6"]
+|===
+|가격|거래아이디|거래시간
+|2500|AAA|2020-10-30 17:30:00
+|3000|BBB|2020-10-31 14:00:00
+|1000|AAA|2020-11-02 11:00:00
+|2000|AAA|2020-11-04 15:25:00
+|===
+
+=== Scan
+- 모든 데이터를 불러옴(primary key 사용X)
+- ProjectionExpression 파라미터
+- 대용량 테이블 조회시 병렬처리
+
+=== Query VS Scan
+- Query가 Scan 보다 훨씬 효율적임
+- 따라서 Query 사용 추천
+
+
+== DAX
+DynamoDB Acclerator
+
+- 클러스터 In-Memory 캐시
+- 10배 이상의 속도 향상
+- 읽기 요청만 해당사항(쓰기요청 X)
+ * 예) Black Friday 날 쇼핑 웹사이트 운영(수만은 읽기 요청 예상)
+
+=== DAX 원리
+- DAX 캐싱 시스템
+ * 테이블에 데이터 삽입 & 업데이트 시 DAX에도 반영
+- 읽기 요청에 맞는 데이터가 DAX에 들어있을 시 DAX에서 데이터 즉시 반환(Cache Hit) <--> (Cache Miss)
+
+=== DAX 단점
+- 쓰기 요청이 많은 어플리케이션에서는 부적절함
+- 읽기 요청이 많지 않은 어플리케이션에서 부적절함
+- 아직 모든 지역에서 제공하지 않음
+
+
+== DynamoDB Stream
+- DynamoDB 테이블에서 일어나는 일들(삽입, 수정, 삭제 등)이 일어날 시 시간적 순서에 맞게 Streams에 기록
+- Log는 즉각 암호화가 일어나며 24시간동안 보관됨
+- 주로 이벤트를 기록하고 이벤트 발생을 외부로 알리는 용도
+ * 예) Lambda Function
+- 이벤트 전&후에 대한 상황 보관 (24시간 동안 보관됨)
+- 어플리케이션 -> AWS SDK(DynanoDB API / DynanoDB Streams API) -> DynamoDB Endpoint / DynamoDB Stream Endpoint
+- DynamoDB Streams <- Lambda Function -> SNS(Simple Notification Service) -> SQS(Simple Queue Service) <--> 어플리케이션

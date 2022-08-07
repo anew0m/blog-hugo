@@ -1,0 +1,121 @@
+---
+title: "(기초) AWS - EC2"
+subtitle: "AWS에 대해 알아봅니다."
+description: ""
+tags: ["학습", "AWS"]
+categories: ["IT"]
+date: 2021-05-07
+lastmod: 2021-05-07
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= (기초) AWS - EC2
+
+== EC2
+EC2(Elastic Compute Cloud)는 클라우드환경에서 스토리지가 유연하게 변경될 수 있도록 제공
+
+EC2를 사용하기 위해 EBS라는 디스크 볼륨을 요구함
+
+=== EC2 과금 정책
+ - On-demand : 시간 단위로 가격이 고정되어 있음
+ - Reserved : 한정된 EC2 용량 사용 가능, 1-3년동안 시간별로 할인 적용 받을 수 있음
+ - Spot : 입찰(경매) 가격 적용. 가장 큰 할인률을 적용 받으며 특히 인스턴스의 시작과 끝 기간이 전혀 중요하지 않을 때 매우 유용.(갑자기 켜지고 꺼지는 경우 발생)
+
+=== EC2 과금 활용 방안
+- On-demand : 오랜시간동안 선물을 내지 않고 최소한의 비용을 지불하여 EC2 인스턴스를 사용하고 싶을 때, 특히 개발 시 최초로 EC2 인스턴스에 deploy 할 때 매우 유용.(개발 시작과 끝의 기간을 알 수 없을 때 권장)
+
+- Reserved : 안정된, 예상 가능한 workload 시 Reserved 사용 권장, 선불로 인한 컴퓨팅 비용 대폭 감소(개발 시작과 끝의 기간을 알 수 있을 때 권장)
+
+- Spot : 경매와 유사. 단순히 비용 절감 시 유용함. 인스턴스의 시작/끝 시점에 구애 받지 않을 경우 권장
+
+
+== EBS
+EBS(Elastic Block Storage)
+
+ - 저장 공간이 생성되어지며 EC2 인스턴스에 부착됨
+ - 디스크 볼륨 위에 File System이 생성됨
+ - EBS는 특정 Availability Zone에 생성됨
+
+=== Availability Zone(AZ)
+하나의 Region 안에 여러개의 Availability Zone(이하 AZ)가 존재 할 수 있음
+
+서버가 다운되었을 때 AZ라는 백업을 통해 서비스 제공을 가능하게 해줌
+
+일종의 Disaster Recovery
+
+=== EBS 볼륨 타입
+
+==== SSD
+- *(GP2) General Purpose SSD* : 최대 10K IOPS를 지원하며 1GB당 3 IOPS 속도가 나옴(보편적으로 사용됨)
+- *(I01) Provisioned IOPS SSD* : 극도의 I/O률을 요구하는 환경에서 주로 사용됨. 10K 이상의 IOPS를 지원함 (예: 매우 큰 DB관리)
+
+==== Magnetic/HDD
+- *(ST1) Throughput Optimized HDD* : 빅데이터 Datawarehouse, Log 프로세싱시 주로 사용
+- *(SC1) CDD HDD* : 파일 서버와 같이 드문 volume 접근시 주로 사용되며 매우 저렴한 비용(boot volume으로 사용 불가능, OS 설치 불가)
+- *(Standard) Magnetic* : 디스크 1GB당 가장 싼 비용을 자랑함. (Boot volume으로 사용 가능)
+
+
+== ELB
+ELB(Elastic Load Balancers)
+
+- 수많은 서버의 흐름을 균형있게 흘려보내는데 중추적인 역할을 함
+- 하나의 서버로 traffic이 몰리는 병목현상(bottleneck) 방지
+- Traffic의 흐름을 Unhealthy instance -> healthy instance로
+(Unhealthy는 인스턴스 Shutdown, 등으로 발생)
+
+=== ELB 타입
+
+==== Application Load Balancer
+OSI Layer 7에서 작동됨(Application Layer)
+
+- HTTP, HTTPS와 같은 traffic의 load balancing에 가장 적합함
+- 고급 request 라우팅 설정을 통하여 특정 서버로 request를 보낼 수 있음(root를 변경하는 것)
+
+==== Network Load Balancer
+OSI Layer 4에서 작동되고 매우 빠른 속도를 자랑하며 Production 환경에서 종종 쓰임
+(Transport Layer)
+
+- 극도의 performance가 요구되는 TCP traffic에서 적합함
+- 초당 수백만개의 request를 아주 미세한 delay로 처리 가능
+
+==== Classic Load Balancer
+현재 Legacy로 간주됨, 따라서 거의 쓰이지 않음(Legacy ELB 라고도 함)
+
+- 성능은 뒤쳐지지만 Layer 4, 7 지원
+- Layer 7의 HTTP/HTTPS 라우팅 기능 지원
+- Layer 4의 TCP traffic 라우팅 기능도 지원
+
+
+=== Load Balancer Error : 504 Error
+EC2는 언제나 정상 동작한다는 보장이 없기 때문에 ELB에서 Error를 발견하여 504 Error를 사용자에게 보여줌
+
+Application 또는 Server가 응답받지 못할 때 나타나는 현상
+
+- 웹서버/DB Layer에서 해결 가능
+
+=== X-Forwarded-For 헤더
+
+- USER --(DNS)--> ELB --> EC2
+- public IP address --(DNS)--> Private IP --> EC2
+- 152.12.3.225 --(DNS)--> 10.0.0.23 --> 10.0.0.23
+- 따라서 EC2는 Private IP address 밖에 볼 수가 없음
+- 하지만 EC2는 X-Forwarded-For 헤더 를 사용해 public IP address 를 알 수 있음
+
+
+== Route53
+AWS에서 제공하는 DNS 서비스. 도메인 주소를 구매하여 아래 3가지와 연결가능
+
+- S3 Bucket
+- EC2 instance
+- Load Balancer

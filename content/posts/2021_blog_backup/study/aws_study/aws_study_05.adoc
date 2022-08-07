@@ -1,0 +1,138 @@
+---
+title: "(기초) AWS - S3"
+subtitle: "AWS에 대해 알아봅니다."
+description: ""
+tags: ["학습", "AWS"]
+categories: ["IT"]
+date: 2021-05-10
+lastmod: 2021-05-10
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= (기초) AWS - S3
+
+== S3
+S3(Simple Storage Service) AWS에서 가장 처음 런칭
+
+- 안전하고 가변적인(Scaling) Object(OS 불가, 이미지, 파일 등만 가능) 저장공간을 제공(ex: Google Cloud)
+- 편리한 UI 인터페이스를 통해 어디서나 쉽게 데이터를 저장하고 불러올 수 있음
+- 파일 크기는 0KB 부터 5TB까지 지원
+- 저장공간 무제한(자동으로 저장공간이 늘어남)
+- Bucket이라는 이름을 사용함(디렉토리와 유사함)
+- Bucket은 보편적인 namespace를 사용함(Bucket 이름은 유니크 해야함)
+
+=== S3 Object 구성요소
+- Key (파일명)
+- Value (파일 내 데이터)
+- Version ID (S3 고유 특징)
+- Metadata
+- CORS(Cross Origin Resource Sharing) (AWS 사용시 종종 출현, 한 버켓의 파일은 다른 버켓에서 접근 가능하게 해주는 기능(지역무시))
+
+=== S3 Data Consistency Model
+- (PUT) Read after Write Consistency
+- (UPDATE, DELETE) Eventual Consistency (바로 바뀐것 같아 보이지만, 내부적으로는 아님)
+
+=== S3 스토리지 종류
+- 일반 S3
+- S3 - IA(Infrequent Access)
+- S3 - One Zone IA
+- Glacier
+- Intelligent Tiering
+
+==== 일반 S3
+- 가장 보편적으로 사용되는 스토리지 타입
+- 높은 내구성, 가용성(Durability, Availability) (데이터 손실없이 잘 복원 되는지, 데이터 접근이 얼마나 용이한지)
+
+==== S3 - IA(Infrequent Access)
+- 자주 접근되지는 않으나 접근시 빠른 접근이 요구되는 파일이 많을시 유용
+- 일반 S3에 비해 비용은 저렴하나 접근시 추가 비용 발생
+- 멀티 AZ를 통한 데이터 저장 (가용성 높음)
+
+==== S3 - One Zone IA
+- 단일 AZ를 통한 데이터 저장
+- 단일 AZ에 의한 데이터 접근 제한(조금 낮은 가용성)
+- 데이터 접근시 S3 - IA 보다 20% 비용 저렴 (비용과 가용성을 잘 따져 사용)
+
+==== Glacier
+- 거의 접근하지 않을 데이터 저장 시 유용
+- 매우 저렴한 비용
+- 데이터 접근시 대략 4-5시간 소요
+
+==== Intelligent Tiering
+- 2018년 런칭
+- 데이터 접근 주기가 불규칙할 때 매우 유용
+- 2가지 티어 존재 (AWS가 자동분류)
+ * Frequent Tier (데이터 접근이 한달 없을 경우 분류)
+ * Infrequent Tier (데이터 접근할시 분류)
+- 데이터 접근 주기에 따라 두가지 티어중 하나로 선택됨
+- Frequent Tier가 비용이 약간 더 비쌈
+- 최고의 비용 절감 효율을 누릴 수 있음
+
+=== S3 요금
+- GB 당
+- PUT, GET, COPY 요청 횟수당
+- 데이터 다운로드 시 / 다른 리소스로 전송시
+- Metadata (object tag)
+
+
+== S3 - 버켓 생성시 알아야 할 것들
+=== S3 사용 용례
+- 파일 저장소 (로그, 다양한 파일들(이미지, 비디오, 압축파일 등))
+- 웹사이트 호스팅
+- CORS(Cross Origin Resource Sharing)
+
+=== 최초 S3 버켓 생성시 -> 비공개(Private)
+- 버켓 정책 변경(Bucket Policy)
+- 접근 제어 리스트 변경 (Access Control List)
+
+
+== S3 암호화(Encryption)
+=== 암호화 유형
+==== 파일 업로드/다운로드 시
+- SSL / TLS (Secure Socket Layer / Transport Layer Security)
+
+==== 가만히 있을 시
+- SSE(Server-Side Encryption)
+- SEE-S3
+- SSE-KMS (누가, 언제, 어떻게 암호를 풀었는지 기록)
+- SSE-C (딱히 장점은 없어 보임)
+
+=== S3 암호화 과정
+- PUT 요청이 생성됨
+----
+PUT /simon-image.jpg HTTP/1.1
+Host: SimonBucket.s3.<Region>.amazonaws.com
+Date: Thu, 12 Feb 2020 14:26:00 GMT
+Authorization: authorization string
+Content-Type: text/plain
+Content-Length: 82253
+x-amz-meta-author: Simon
+Expect: 100-continue
+[82253 bytes of object data]
+----
+
+- x-amz-server-side-encryption-paramerer
+ *  암호화되지 않은 파일 제한
+----
+PUT /simon-image.jpg HTTP/1.1
+Host: SimonBucket.s3.<Region>.amazonaws.com
+Date: Thu, 12 Feb 2020 14:26:00 GMT
+Authorization: authorization string
+Content-Type: text/plain
+Content-Length: 82253
+x-amz-meta-author: Simon
+Expect: 100-continue
+x-amz-server-side-encryption-parameter: AES-256   <--<--
+[82253 bytes of object data]
+----

@@ -1,0 +1,37 @@
+---
+title: "(기초) AWS - CloudFront"
+subtitle: "AWS에 대해 알아봅니다."
+description: ""
+tags: ["학습", "AWS"]
+categories: ["IT"]
+date: 2021-05-14
+lastmod: 2021-05-14
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= (기초) AWS - CloudFront
+
+== CloudFront
+- 정적, 동적, 실시간 웹사이트 컨텐츠를 유저들에게 전달
+- Edge Location을 사용
+- 컨텐트 딜리버리 네트워크 Content Delivery Network(CDN)
+ * 멀어질 수록 지연시간 증가
+ * CDN은 컨텐트 딜리버리 서버, 웹 페이지가 어디에서 불려지는지, 웹 페이지를 불러오려는 사용자가 어느 지역에 거주하는지에 근거하여 컨텐츠 웹페이지에 딜리버리 해줌
+ * 특정 홈페이지 방문시 CDN을 통해 속도를 개선시킬 수 있음
+- 분산 네트워크(Distributed Network)
+
+=== CloudFront 용어 정리
+- Edge Location(엣지 지역) : 컨텐츠들이 캐시(Cache)에 보관되어지는 장소
+- Origin(오리진) : 원래 컨텐츠들이 들어있는 곳, 웹서버 호스팅이 되어지는 곳. EC2 인스턴스가 오리진이 될 수 있음
+- Distribution(분선) : CDN에서 사용되어지며 Edge Location들을 묶고 있다는 개념

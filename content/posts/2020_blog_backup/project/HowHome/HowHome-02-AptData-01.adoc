@@ -1,0 +1,41 @@
+---
+title: "어떡하집 프로젝트 - 아파트 정보 수집 계획"
+subtitle: "아파트와 관련된 정보를 수집하기 위한 계획을 정의합니다."
+description: ""
+tags: ["프로젝트", "부동산"]
+categories: ["IT"]
+date: 2020-02-15
+lastmod: 2020-02-15
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= 어떡하집 프로젝트 - 아파트 정보 수집 계획
+정민호
+2020-02-15
+:jbake-last_updated: 2020-02-15
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: 부동산, 개인프로젝트
+:description: 아파트와 관련된 정보를 수집하기 위한 계획을 정의합니다.
+:jbake-og: {"image": "img/jdk/duke.jpg"}
+:idprefix:
+:toc:
+:sectnums:
+
+== 아파트 정보 수집 계획
+먼저 아파트 정보 수집을 하려고 합니다. 따라서 위해 아래와 같은 작업들을 수행하려고 합니다.
+
+. 아파트 수집 정보 정의
+. 아파트 정보 수집 방안 수립
+. 아파트 정보 저장 방안 수립

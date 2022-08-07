@@ -1,0 +1,51 @@
+---
+title: "(응용) AWS - Advanced CI/CD"
+subtitle: "AWS에 대해 알아봅니다."
+description: ""
+tags: ["학습", "AWS"]
+categories: ["IT"]
+date: 2021-05-15
+lastmod: 2021-05-15
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= (응용) AWS - Advanced CI/CD
+
+== Code Deploy Life Cycle Event Hooks
+- appspec.yml 파일
+ * CodeDeploy 하는데 있어 모든 설정관련 정보들이 내포되어 있는 중추적인 역할을 하는 파일
+----
+version: 0.2
+os: linux
+files:
+  - source: config/config.txt
+    destination: /webapps/Config
+  - source: Source
+    destination: /webapps/myApp
+hooks:
+ BeforeInstall:
+   - location: Scripts/UnzipResourceBundles.sh
+   - location: Scripts/UnzipDataBundles.sh
+ AfterInstall:
+   - location: Scripts/RunResourcesTests.sh
+     timeout: 360
+ ApplicationStart:
+   - location: Scripts/RunFunctionalTests.sh
+ ValidateService:
+   - location: Scripts/ValidateService.sh
+     timeout: 3600
+----
+
+- 많이 사용되는 이벤트 hooks(Run Order(State의 순서가 정해져 있음)) 종류
+ * ELB[ ApplicationStop -> DownloadBundle -> BeforeInstall -> Install -> AfterInstall -> ApplicationStart -> ValidateService ]ELB

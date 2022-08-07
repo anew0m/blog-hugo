@@ -1,0 +1,98 @@
+---
+title: "(응용) AWS - Serverless"
+subtitle: "AWS에 대해 알아봅니다."
+description: ""
+tags: ["학습", "AWS"]
+categories: ["IT"]
+date: 2021-05-15
+lastmod: 2021-05-15
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= (응용) AWS - Serverless
+
+== Serverless
+서버가 없는게 아니라 서버를 우리가 관리할 필요 없이 알아서 우리들의 어플리케이션 코드를 클라우드에서 돌릴 수 있게 해줌
+(Resource Management, Auto Scaling UP/Down 등 해줌)
+
+AWS는 Infrastructure Management를 알아서 해줌, *우리가 할 일은 코드를 짜고 구현만 하면됨*
+
+=== AWS는 우리를 위해서 무엇을?
+- Capacity Provisioning
+ * 예) DynamoDB/EC2의 경우 얼마나 많은 읽기/쓰기가 발생하는지 서버과부하가 생기는지 감시하고 그에 따라 대응
+- Auto-Scaling
+ * 사람의 개입없이 서버를 키웠다 줄였다 조절
+- Patching
+ * EC2 인스턴스에서 OS를 돌리거나 RDS에서 DB를 구축할 때 알아서 업데이트 및 패치를 시켜줌
+
+=== Serverless 이점
+- 빠른 배포(Faster Deployment)
+- 대단한 확장성(Scalable)
+- 비용 절감(Lower Cost)
+ * 항상 돌아가는게 아니라 Event에 근거하여 돌아가기 떄문에 비용이 저렴함 (Lambda와 같음)
+
+=== Serverless AWS 서비스
+- Lambda
+ * 서버를 구축할 필요없이 단순히 코드작성
+- SQS(Simple Queue Service)
+ * 메세지를 큐에 담고 들어온 순서에 따라 메세지를 처리
+- SNS(Simple Notification Service)
+ * 메세지 서비스로 특정 이벤트 발생이 텍스트나 이메일을 보내주는 서비스
+- API Gateway
+ * Serverless 이며 확장성이 뛰어난 API를 만들고 퍼블리쉬를 관리하는 서비스
+- DynamoDB
+ * 테이블을 만들고 설정만 해준다면 알아서 테이블을 업데이트 해줌
+ * RCU와 WCU를 Auto Scaling 해줄 뿐만 아니라 TTL을 통하여 테이블 클리너 제공
+- S3
+ * 웹사이트 호스팅 및 오브젝트를 보관하는 스토리지
+
+
+== Step Function
+- Serverless 어플리케이션을 구축함에 있어 시각적 인터페이스 제공
+- 일련의 Step으로 Serverless 어플리케이션을 관리할 수 있음
+- Step은 Business Logic에 의해 순서대로 실행되어짐
+- Step의 output은 또다른 Step의 input이 될 수 있음
+
+=== Workflow
+==== Sequential Workflow (State Machine)
+- START -> Strip Strings -> Remove WhiteSpace -> Word Counts -> END
+
+==== Parallel Workflow
+- START -> Process Photo -> [Extract Metadata - Adjust Image Size - Update Color Channel - Crop Image] -> Store in DB -> END
+
+
+== Lambda - Version Control
+- Lambda Function을 처음 만들면 Version은 *$LATEST* 가 됨
+- 변경된 Lambda Function을 업로드하면 그 Version이 *$LATEST* 가 됨
+- Version은 우리가 *Alias* 를 부여할 수 있음
+ * 다른 Lambda Version을 가질 수 있음
+ * 다른 Lambda Version은 *_다른 ARN_* 이 존재함
+- *Alias* 는 다른 Version으로 변환 시 사용되어짐
+
+
+== Lambda - VPC Access
+- Lambda 함수를 만들고 Private PC 혹은 Private Subnet 안에 있는 Resource 를 접근해야하는 일이 있었을 텐데 당연하지만 밖에서는 접근되어선 안됨
+- Lambda -> Private VPC[Private Subnet(EC2, RDS)]
+- Lambda 함수가 Private VPC에 접근해야하는 상황
+ * 예) Lambda 함수가 Serverless Website 에서 RDS DB 읽기&쓰기
+ * 예) Lambda 함수가 보안적인 부분에 문제가 생긴 EC2 인스턴스 종료해야하는 상황
+
+=== VPC 안에 Lambda가 접근하려면?
+- Lambda 함수가 Private Subnet 에 접근할 수 있게 허용해줘야함
+- Lambda 함수는 아래와 같은 VPC Configuration 이 요구됨
+ * Private Subnet ID
+ * Security Group ID
+- Lambda 함수는 Private Subnet 으로부터 사용 가능한 IP 주소를 부여해주는 *ENI(Elastic Network Interface)* 를 셋업함
+
+

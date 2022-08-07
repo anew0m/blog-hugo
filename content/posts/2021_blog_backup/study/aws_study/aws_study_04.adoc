@@ -1,0 +1,124 @@
+---
+title: "(기초) AWS - RDS"
+subtitle: "AWS에 대해 알아봅니다."
+description: ""
+tags: ["학습", "AWS"]
+categories: ["IT"]
+date: 2021-05-10
+lastmod: 2021-05-10
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= (기초) AWS - RDS
+
+== RDS
+RDS(Relational DB Service) 관계형 데이터베이스(그 외 NoSQLDB)
+
+- 데이터베이스
+- 테이블
+- 필드(컬럼)
+- 데이터
+
+=== Relational DB 종류
+AWS RDS에서 사용가능
+
+- Microsoft SQL
+- Oracle
+- MySQL
+- Postgre
+- *Aurora* (AWS에서 제공하는 DB 형태이며, FreeTier 아님)
+- MariaDB
+
+=== Data Warehousing
+- Business Intelligence
+- 리포트 작성, 데이터 분석시 사용(Production Database -> DataWarehousing)
+- 매우 방대한 분량의 데이터 로드시 사용
+
+=== OLTP vs OLAP
+==== OLTP
+Insert와 같이 종종 사용되어지는, 혹은 규모가 작은 데이터를 불러올 때 사용되는 SQL 쿼리가 필요할 때 유용
+
+예) Order # 210  에만 해당되는 customer 이름, 주소, 시간 정보 Insert
+
+==== OLAP
+매우 큰 데이터를 불러올 때 사용. 주로 덩치가 큰 Select 쿼리가 사용됨
+
+예) 특정 회사 부서의 Net Profit, Products
+
+
+
+== Database Back-ups
+- 자동백업 (Automated Backups)
+- DB 스냅샷 (DB Snapshots)
+
+=== 자동백업 (Automated Backups; AB)
+- RDS 생성시 디폴트 셋팅으로 적용되어 있음.
+- Retention Period(1-35일) 안의 어떤 시간으로 돌아가게 할 수 있음 (Point In Time;PIT)
+- AB는 그 날 생성된 스냅샷과 Transaction Logs(TL)을 참고함
+- 디폴트로 AB기능이 설정되어 있으며 백업 정보는 S3에 저장 (특정 조건을 달성할 시 S3는 과금 주의)
+- AB동안(S3에 데이터를 저장할 때) 약간의 I/O suspension이 존재할 수 있음 -> Latency (체감은 낮음)
+
+=== DB 스냅샷 (DB Snapshots)
+- 주로 사용자에 의해 실행됨
+- 원본 RDS Instance를 삭제해도 스냅샷은 존재함(vs AB)
+
+=== DB 백업
+- *original*.ap-northeast-2.rds.amazonaws.com -> *restored*.ap-northeast-2.rds.amazonaws.com
+- RDS Instance -> RDS Endpoint
+
+
+
+== Multi AZ 그리고 Read Replicas
+=== Multi AZ(Availability Zones)
+- 원래 존재하는 RDS DB에 무언가 변화(Write 등)가 생길 때 다른 Availability Zone에 똑같은 복제본이 만들어짐 = Synchronize
+- AWS에 의해서 자동으로 관리가 이루어짐 (No admin intervention)
+- 원본 RDS DB에 문제가 생길 시 자동으로 다른 AZ의 복제본이 사용됨(Disaster Recovery)
+- *_Disaster Recovery Only!_* (성능개선을 위해서 사용되지 않음. 성능 개선을 위해선 *_Read Replica_* 사용)
+
+=== Read Replica
+- Production DB의 읽기 전용 복제본이 생성됨
+- 주로 Read-Heavy DB 작업시 효율성의 극대화를 위해 사용됨(Scaling이 주목적)
+- *_Disaster Recovery 용도가 아님!_*
+- 하나의 RDS에 대해 최대 5개 Read Replica DB 허용
+- Read Replica의 Read Replica 생성 가능(단 Latency 발생)
+- 각각의 Read Replica는 자기만의 고유 Endpoint 존재(IP 주소가 아님)
+
+
+== ElasticCache
+- RDS의 개념이 아니라 Cache
+- 클라우드 내에서 In-Memory 캐시를 만들어줌
+- 데이터베이스에서 데이터를 읽어오는 것이 아니라 캐시에서 빠른 속도로 데이터를 읽어옴
+- Read-Heavy 어플리케이션에서 상당한 Latency 감소 효과 누림
+- 초반 APP 개발이나 테스트 용도에는 적합하지 않음
+
+=== Memcached
+- Object 캐시 시스템으로 잘 알려져 있음
+- ElastiCache는 Memcached의 프로토콜을 디폴트로 따름
+- EC2 Auto Scaling 처럼 크기가 커졌다 작아졌다 가능함
+- 오픈소스
+
+==== Memcached 사용처
+- 가장 단순한 캐싱 모델이 필요할 때
+- Object caching이 주된 목적일 때
+- 캐시 크기를 마음대로 scaling하기를 원할 때
+
+=== Redis
+- Key-Value, Set, List 와 같은 형태의 데이터를 In-Memory에 저장 가능함
+- 오픈소스
+- Multi-AZ 지원
+
+==== Redis 사용처
+- List, Set과 같은 데이터셋을 사용할 때
+- 리더보드처럼 데이터셋의 랭킹을 정렬하는 용도가 필요할 때
+- Multi AZ 기능이 사용되야할 때

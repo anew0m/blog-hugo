@@ -1,0 +1,75 @@
+---
+title: "(기초) AWS - Code Commit & Code Deploy & Code Pipeline"
+subtitle: "AWS에 대해 알아봅니다."
+description: ""
+tags: ["학습", "AWS"]
+categories: ["IT"]
+date: 2021-05-14
+lastmod: 2021-05-14
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= (기초) AWS - Code Commit & Code Deploy & Code Pipeline
+
+== CI/CD
+- CI : Continuous Integration(지속적인 통합)
+- CD : Continuous Deployment(지속적인 배포)
+
+=== CI/CD의 장점
+- 자동화 시스템(Automation) - 테스트
+- Incremental Change
+
+=== CI/CD - 중앙 리포지토리(Repository)
+- Github
+ * Local & Master branch
+
+=== CI/CD - 배포준비 및 배포
+- 배포준비
+- 배포
+
+
+== Code Commit
+- 파일들을 보관하는 저장 장소(Repository) - Github과 매우 유사
+ * 코드, 사진, 라이브러리 등등
+- 동시에 많은 사람들이 저장 장소 접근 및 업데이트 가능
+- 버전 컨트롤 기능 제공
+ * 예) 언제 어떻게 누가 저장 장소 내용을 변경하였는지
+
+
+== Code Deploy
+자동 배포 (Automated Deployment)
+
+=== Code Deploy 장점
+- 새로운 기능들의 빠른 배포
+- 소프트웨어 & 서버 다운타임 X
+- Manual 에러 X
+- Rolling 배포
+- Blue/Green 배포
+
+
+== Code Pipeline
+CI/CD 끝판왕!
+
+=== Code Pipeline이 하는 일은?
+- 빌드, 테스트, 배포 과정을 관리
+ * 코드 변경시 Code Pipeline은 이를 감지할 수 있음
+- 소프트웨어 및 어플리케이션 출시 자동화 가능
+ * 빠르고 쉬운 디버깅을 가능케 해줌
+ ** 배포(Deployment) VS 출시(Release)
+
+=== Code Pipeline 작동 방법
+. Workflow 정의(Code Pipeline)
+. 코드 저장소에서 코드 변경(Code Commit)
+. 컴파일, 테스트, 패키지 생성(Code Build)
+. staging 혹은 production 배포(Code Deploy)

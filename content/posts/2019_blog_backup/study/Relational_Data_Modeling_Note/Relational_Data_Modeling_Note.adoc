@@ -1,0 +1,46 @@
+---
+title: "관계형 데이터 모델링 노트 소개"
+subtitle: "데이터모델링 도서인 `관계형 데이터 모델링 노트 개정판` 책을 요약 및 정리하기전 간략히 책을 소개하고자 한다."
+description: ""
+tags: ["학습", "데이터모델링"]
+categories: ["IT"]
+date: 2019-09-25
+lastmod: 2019-10-04
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= 관계형 데이터 모델링 노트 소개
+
+https://dataprofessional.tistory.com/182[관계형 데이터 모델링 노트 개정판 - 김기창저]
+
+image::img/Relational_Data_Modeling_Note/book_cover.jpg[book_cover]
+
+https://book.naver.com/bookdb/book_detail.nhn?bid=13445378[관계형 데이터 모델링 노트 개정판]은 http://wisdommind.co.kr/[위즈덤마인드]의 김기창 대표님이 집필한 책이다.
+
+본 도서는 기존에 발간된 https://book.naver.com/bookdb/book_detail.nhn?bid=7421308[관계형 데이터 모델링 노트 - 재미와 깨달음이 있는 모델링 이야기 프리미엄 가이드 2]를 개선되어 재발간된 책으로, 2018.03.31에 출간되었으며 총 742 페이지로 아래와 같은 구성으로 이루어져있다.
+
+****
+. 엔터티 이야기
+. 정규화 이야기
+. 데이터 통합과 서브타입 이야기
+. 속성 이야기
+. 관계 이야기
+. 이력 데이터 이야기
+. 비정규화 이야기
+****
+
+
+본 도서를 요약 및 정리하고자 생각하게된 계기는 네이버 카페인 https://cafe.naver.com/dbstudydapsqlp[데이터와사람들]에서 진행된 https://cafe.naver.com/dbstudydapsqlp/5370[스터디]를 시작하게됨으로써 도서를 요약 및 정리하기로 결심했다.
+
+따라서 책 내용을 정리하여 포스팅 하는 주기는 스터디 일정에 맞춰 19.10.05일 부터 2주 간격으로 한 장씩 포스팅 하고자하지만 유동적으로 변경될 수도 있을것 같다.

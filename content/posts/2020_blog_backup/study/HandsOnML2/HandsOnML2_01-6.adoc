@@ -1,0 +1,62 @@
+---
+title: "핸즈온 머신러닝 1장 한눈에 보는 머신러닝 - 1.6 테스트와 검증"
+subtitle: "데이터분석 관련 책 `핸즈온 머신러닝 2판`의 1장 1.6절 테스트와 검증 요약 및 정리"
+description: ""
+tags: ["학습", "빅데이터"]
+categories: ["IT"]
+date: 2020-09-21
+lastmod: 2020-09-21
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= 핸즈온 머신러닝 1장 한눈에 보는 머신러닝 - 1.6 테스트와 검증
+
+---
+== 한눈에 보는 머신러닝
+---
+=== https://rocketdan.netlify.app/handsonml2_01-1[머신러닝이란?]
+---
+=== https://rocketdan.netlify.app/handsonml2_01-2[왜 머신러닝을 사용하는가?]
+---
+=== https://rocketdan.netlify.app/handsonml2_01-3[애플리케이션 사례]
+---
+=== https://rocketdan.netlify.app/handsonml2_01-4[머신러닝 시스템의 종류]
+---
+=== https://rocketdan.netlify.app/handsonml2_01-5[머신러닝의 주요 도전 과제]
+---
+=== https://rocketdan.netlify.app/handsonml2_01-6[테스트와 검증]
+
+****
+* 훈련데이터를 훈련 세트와 테스트 세트 두 개로 나누는 것
+* 새로운 샘플에 대한 오류 비율을 일반화 오차(generalization error) 또는 외부 샘플 오차(out-of-sample error)
+* 테스트 세트에서 모델을 평가함으로써 오차에 대한 추정값(estimation)을 얻음
+* 훈련 오차가 낮지만 일반화 오차가 높다면 이는 모델이 훈련 데이터에 과대적합되었다는 뜻
+****
+
+. 하이퍼파라미터 튜닝과 모델 선택
+* 하이퍼파라미터(hyperparameter)는 학습 알고리즘의 파라미터로써 학습 알고리즘으로부터 영향을 받지 않으며, 훈련 전에 미리 지정되고, 훈련하는 동안에는 상수로 남아 있음
+** 하이퍼 파라미터를 매우 큰 값으로 지정하면 거의 평편한 모델을 얻게 됨
+* 모델 평가 시 홀드아웃 검증(holdout validation)을 사용하며 이 세트를 검증세트(validation set) 또는 개발 세트(development set), 데브 세트(dev set)라고 함
+** 훈련 세트의 일부를 떼어내어 여러 후보 모델을 평가하고 가장 좋은 하나를 선택
+** 검증 세트가 너무 작으면 모델이 정확하게 평가 되지 않으며 이에 대한 해결책으로, 작은 검증 세트를 여러 개를 사용해 반복적인 교차 검증(cross-validation) 수행
+*** 훈련 시간이 검증 세트의 개수에 비례해 늘어남
+
+. 데이터 불일치
+* 검증 세트와 테스트 세트에 대표 데이터가 배타적으로 포함되어야 함
+* 훈련-개발 세트(train-dev set)으로 훈련 데이터의 일부를 떼어내어 또 다른 세트를 만들어 훈련한 다음 훈련-개발 세트에서 평가
+
+
+---
+=== https://rocketdan.netlify.app/handsonml2_01-7[연습문제]
+---

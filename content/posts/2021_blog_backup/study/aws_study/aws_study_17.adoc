@@ -1,0 +1,63 @@
+---
+title: "(응용) AWS - X-Ray"
+subtitle: "AWS에 대해 알아봅니다."
+description: ""
+tags: ["학습", "AWS"]
+categories: ["IT"]
+date: 2021-05-15
+lastmod: 2021-05-15
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= (응용) AWS - X-Ray
+
+== X-Ray
+- 분산 어플리케이션 분석 및 디버깅 용도로 사용되어짐
+ * 진짜 문제는 무엇이며 퍼포먼스 혹은 접속과정에서 생기는 에러를 확인하는 용도
+- 시각화 기능을 제공하여 쉽게 어플리케이션 흐름 이해
+ * X-Ray Service Map
+
+=== X-Ray 통합
+- X-Ray를 사용할 수 있는 AWS 리소스
+ * EC2, Lambda, DynamoDB, ELB, API Gateway, SNS, SQS, Elastic BeanStalk 등
+- 자체 App과도 통합 가능
+ * Java, Node JS, Go, Ruby, Python 으로 구현된 App
+- API Calls
+ * AWS SDK로 구현된 App은 X-Ray SDK를 통하여 X-Ray로 정보
+
+=== X-Ray 사용방법
+- X-Ray Agent 설치 -> X-Ray SDK App 설정 --(http request status code latency)-> X-Ray
+ * X-Ray Agent 는 주로 EC2 인스턴스에 설치
+
+
+== X-Ray Configuration
+- [(EC2 -> X-Ray SDK -> X-Ray Daemon) , (ECS -> X-Ray SDK -> X-Ray Daemon)] => X-Ray
+ * X-ray Daemon 에는 Queue 가 존재하며 데이터를 Batch 로 X-Ray 에 전송함
+ * X-Ray SDK 와 X-Ray Daemon 이 인스턴스 안에 설치되어 있어야 X-Ray 에 데이터를 보낼 수 있음
+
+=== X-Ray Configuration
+- EC2 인스턴스
+ * EC2 인스턴스 안에 X-Ray SDK + Daemon 설치
+- Elastic BeanStalk
+ * Elastic BeanStalk 안에서 돌아가고 있는 EC2 인스턴스에 X-Ray SDK + Daemon 설치
+- Docker Container & ECS
+ * Application 이 돌아갈 Docker Container 안에 X-Ray SDK + Daemon 을 직접 설치
+
+=== Annotation & Indexing
+- Annotation
+ * Application 을 진단할 때 Annotation 을 사용하여 Request 에 대한 추가적인 내용을 가져올 수 있음
+ ** Latency 등
+- Key-Value
+ * Annotation 은 Key-Value 형태로 이루어져 있으며 Filter Expression 을 사용하여 Annotation 이 Indexing 되어짐 (검색결과를 그룹으로 묶어 관리할 수 있음)
+ ** 예) game_name = TicTacToe, game_id = 81263

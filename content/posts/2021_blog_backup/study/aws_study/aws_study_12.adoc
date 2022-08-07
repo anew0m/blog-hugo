@@ -1,0 +1,90 @@
+---
+title: "(응용) AWS - Advanced IAM"
+subtitle: "AWS에 대해 알아봅니다."
+description: ""
+tags: ["학습", "AWS"]
+categories: ["IT"]
+date: 2021-05-15
+lastmod: 2021-05-15
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= (응용) AWS - Advanced IAM
+
+== IAM
+AWS 내에서 유저를 만들고 Role과 Policy 관리
+
+3가지 IAM Policy 유형
+
+- Inline
+- Managed
+- Customer
+
+=== Inline Policies VS Managed Policies VS Custom Policies
+==== Inline
+유저, 그룹에 직접 policy를 심어줌
+
+- 1:1 관계
+- 다른 유저나 그룹에 inline policy 적용x
+- 유저나 그룹 삭제시 inline policy 역시 삭제됨
+
+==== Managed
+AWS에서 생성되고 관리되어지는 Policies
+
+- 우리가 직접 Policy 만들 필요 없음
+- Managed Policy는 다수의 유저와 그룹에 적용 가능
+- Managed Policy는 수정 및 삭제 불가
+ * 예) AmazonDynamoDBFullAccess
+
+==== Customer
+우리들이 직접 새로운 Policy를 만들 수 있음
+
+- 기존에 존재하는 Managed Policy 사용
+- 원하는 요구사항에 맞게 수정하고 사용
+- Managed Policy에서 원하는 Policy가 없을 때 사용
+
+
+=== Web Identity Federation(WIF)
+- 아마존, 구글 등을 통하여 유저들에게 AWS 접근 권한제공
+- 인증코드(토큰) 사용
+ * 예) 이중 인증(Two-Factor Authentication)
+
+
+=== Cognito
+Web Identity Federation(WIF) 기능을 제공
+
+==== Cognito 주요 특징
+- 회원가입, 로그인 기능(Guest로 로그인 가능)
+- 어프리케이션과 Web Provider간의 중재자 역할
+- 다양한 기기로 부터 사용자 정보를 동기화함 -> 확장성
+- 사용자 Credentials을 자동으로 관리
+
+==== Cognito Use Cases
+Facebook, Google과 같은 소셜미디어를 통한 WIF
+
+- 사용자 -> Facebook -> Token -> Cognito (AWS credentials) -> Token -> 사용자 -> AWS(EC2, S3, DanamoDB)
+
+
+=== Cognito User Pool
+- 모바일, 웹 어플리케이션의 회원가입과 로그인 기능을 관리하는 곳
+- 유저는 User Pool을 거쳐 직접 로그인을 할 수 있음
+- Json Web Token(JWT)
+ * 사용자 <--> User Pool <-(JWT Token)-> Facebook
+ ** 사용자 <-(AWS credentials)-> Identity Pool
+ *** JWT Token과 AWS credentials을 일시적으로 교환
+ *** Identity Pool은 우리들이 유저들을 위해 고유한 Identity를 만들수 있고, 소셜미디어를 통해 인증 가능하게 해주는 기능을 제공(User Pool로 부터 받은 JWT Token과 교환해주는 중추적인 역할)
+ **** 유저는 생성된 Identity를 가지고 AWS credentials을 얻을 수 있는데 제약이 필요함(AWS에 대한 모든 권한을 제공할순 없으니까!).
+ **** 이러한 커스텀 설정을 제공하는게 Identity Pool.
+ * AWS(EC2, S3, RDS) <--> 사용자
+ ** AWS credentials 을 통해 AWS에 접근

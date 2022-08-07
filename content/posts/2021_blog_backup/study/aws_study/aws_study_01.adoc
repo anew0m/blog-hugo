@@ -1,0 +1,75 @@
+---
+title: "(기초) AWS - 개요"
+subtitle: "AWS에 대해 알아봅니다."
+description: ""
+tags: ["학습", "AWS"]
+categories: ["IT"]
+date: 2021-05-06
+lastmod: 2021-05-07
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
+images: []
+
+featuredImage: ""
+featuredImagePreview: ""
+---
+:idprefix:
+:toc:
+:sectnums:
+
+
+= (기초) AWS - 개요
+
+== 학습 동기
+관심있는 분야이기도 했고, 회사에서 AWS 관리할 좋은 기회가 생겨 늦게나마 학습을 시작하게되었습니다.
+
+학습은 인프런의 https://www.inflearn.com/course/aws-%EC%9E%85%EB%AC%B8/[AWS(Amazon Web Service) 입문자를 위한 강의] 란 강의를 통해 진행을 하려고 합니다.
+
+그리고 부족한 부분은 아래 두 책을 통해 채우려고 합니다.
+
+ - https://book.naver.com/bookdb/book_detail.nhn?bid=14483604[아마존 웹 서비스 AWS Discovery Book - 클라우드 서비스 개념을 이해하고 직접 구성해보기], ISBN : 9788956748238
+ - https://book.naver.com/bookdb/book_detail.nhn?bid=16261278[14가지 AWS 구축 패턴(배워서 바로 쓰는) - 서버리스에서 마이크로서비스와 AI까지, 실무에 바로 써먹는], ISBN : 9791162242841
+
+
+빠른 학습 진행을 위해 블로그에 실습 과정을 담진 않을 생각이고, 강의에 있는 개념정리 정도만 기록해두려고 합니다.
+
+선행 강의가 끝나면 https://www.inflearn.com/course/aws-%EC%A4%91%EC%83%81%EA%B8%89%EC%9E%90[AWS(Amazon Web Service) 중/상급자를 위한 강의] 란 강의를 추가로 들을 예정입니다.
+
+
+
+== 강의 내용
+아래 내용은 https://www.inflearn.com/course/aws-%EC%9E%85%EB%AC%B8/[AWS(Amazon Web Service) 입문자를 위한 강의]에서 '강의 소개'에 있는 내용입니다.
+
+=== IAM
+AWS를 사용하는데 있어 필요한 유저/그룹의 생성 및 다양한 관리 방법들을 배울 수 있습니다.
+
+=== EC2
+원격으로 인스턴스를 생성하여 nginx를 사용한 간단한 웹사이트 생성을 할 수 있으며 다양한 인스턴스의 유형 및 생성 방법을 배울 수 있습니다.
+
+=== RDS
+AWS에서는 MySQL, PostgresDB등 다양한 데이터베이스 서비스를 제공합니다. 어떻게 AWS에서 데이터베이스를 사용할 수 있을지를 배우고, 데이터베이스를 운영하는데 있어 중요한 개념(백업, 보안 등)들을 알아봅니다.
+
+=== S3
+AWS에서 가장 오래된 서비스 중 하나이며 주로 파일(오브젝트)들을 업로드하고 다운로드하는 용도로 사용됩니다. 그러나 S3에서는 많은 스토리지 유형이 존재하며 그들의 차이를 이해하고 있어야 필요할때 적재적소에 원하는 서비스를 사용할 수 있습니다. 따라서 비용적인 측면, 성능면에서도 이득을 볼 수 있습니다. S3를 어떻게 사용하며 다양한 접근 방법에 대해서 배우실 수 있습니다.
+
+=== CloudWatch
+클라우드 서비스를 사용하게 된다면 꼭 접해볼 수 있는 기본적인, 그러나 매우 강력한 기능들을 제공합니다. 실시간 시스템 Logging서비스 및 알람 설정 기능을 통하여 개발자들에게 필요한 정보를 전달해줍니다. 이를 통하여 손쉬운 디버깅을 가능케 해줍니다. 다양한 Metrics를 통해 더 효율적인 AWS 관리를 가능케 해줍니다.
+
+=== Lambda
+AWS내에 존재하는 수많은 이벤트들이 발동될 시 구현된 Lambda함수가 실행되어 전처리 역할을 가능케 해줄 뿐만 아니라 또다른 AWS 리소스들을 불러오는데 사용됩니다. 특히 Lambda는 Serverless 아키텍쳐를 디자인하는데 매우 중추적인 역할을 담당합니다.
+
+=== CloudFront
+Contents Delivery Network(CDN)에 기반을 두고 있으며 전세계에 흩어져있는 유저들에게 최상의 서비스를 제공하는데 필요되어지는 리소스입니다. 처음 구현하기에 요구되어지는 설정사항은 다소 복잡하나 이후에는 매우 편리한 기능들이 제공됩니다. 약간의 네트워크 지식을 가지고 계시다면 CloudFront를 훨씬 이해하는데 수월합니다.
+
+=== DynamoDB
+AWS에서 제공하는 NoSQL 데이터베이스입니다. Batch data와 Stream data를 load하는데 적합한 서비스이며 NoSQL만이 지니고 있는 강력한 장점들이 어우러져 있는 매우 효용가치가 큰 데이터베이스입니다. 본 강의에서는 기존 관계형 데이터베이스와 어떤 차이가 있으며 DynamoDB만이 가지고 있는 장점들에 대해서 학습합니다.
+
+
+=== API Gateway
+API Gateway를 사용하여 나만의 API를 만들고 RestAPI에서 제공되어지는 다양한 메소드들을 호출하고 테스트하며 AWS에서 제공되어지는 다양한 리소스들(예시
+Lambda Function)과 병합하여 더욱 정교한 파이프라인을 만들고 유지할 수 있습니다. 실제 웹에서 사용되어지는 API역시 API Gateway를 통하여 구현 가능합니다.
+
+=== CI/CD
+소프트웨어 및 어플리케이션 배포는 한번으로 끝나지 않습니다. 지속적인 유지보수 및 관리가 필요합니다. 이를 매우 용이하게 해주는 AWS 리소스중 Code Commit, Code Deploy, Code Pipeline을 배움으로써 전반적인 소프트웨어 개발 및 배포과정을 이해하실 수 있으며 AWS를 통한 CI/CD파이프라인 구축을 체험하실 수 있습니다. 나만의 코드를 repository에 업로드하여 branch를 통한 간편한 코드 유지가 가능합니다. AWS에서 제공하는 다양한 배포 방법을 학습합니다. 대표적으로 Rolling 배포방식과 Blue/Green 배포방식이 있습니다.
