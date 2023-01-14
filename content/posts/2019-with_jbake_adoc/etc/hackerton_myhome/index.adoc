@@ -1,5 +1,5 @@
 ---
-title: "내집마련 해커톤 참여 후기 adoc"
+title: "내집마련 해커톤 참여 후기"
 subtitle: "내집마련 해커톤'을 통한 개인 블로그 제작 과정 소개"
 description: ""
 tags: ["hackerton"]
