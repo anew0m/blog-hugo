@@ -19,8 +19,8 @@ images: []
 featuredImage: ""
 featuredImagePreview: ""
 
-categories: ["IT"]
-tags: ["학습", "AWS"]
+categories: ["IT/Cloud/AWS"]
+tags: ["Study-Inflearn", "IT/Infrastructure"]
 
 alias: []
 series: []

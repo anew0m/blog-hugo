@@ -19,8 +19,8 @@ images: []
 featuredImage: ""
 featuredImagePreview: ""
 
-categories: ["IT"]
-tags: ["학습", "빅데이터"]
+categories: ["IT/DataScience"]
+tags: ["Study-SKwinwin", "DataScience/ML"]
 
 alias: []
 series: []

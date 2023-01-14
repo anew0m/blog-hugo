@@ -19,8 +19,8 @@ images: []
 featuredImage: ""
 featuredImagePreview: ""
 
-categories: ["IT"]
-tags: ["hackerton"]
+categories: ["Hackerton"]
+tags: ["Hackerton", "Blog/Notice"]
 
 alias: []
 series: []

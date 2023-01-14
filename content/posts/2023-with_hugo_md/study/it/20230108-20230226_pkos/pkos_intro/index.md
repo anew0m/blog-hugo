@@ -19,8 +19,8 @@ images: []
 featuredImage: ""
 featuredImagePreview: ""
 
-categories: ["IT/인프라"]
-tags: ["IT", "인프라", "쿠버네티스", "스터디"]
+categories: ["IT/Kubernetes"]
+tags: ["Study-Group-Online", "CloudNet@", "Gasida/PKOS"]
 
 alias: []
 series: []

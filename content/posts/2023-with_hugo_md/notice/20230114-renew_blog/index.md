@@ -19,8 +19,8 @@ images: []
 featuredImage: ""
 featuredImagePreview: ""
 
-categories: ["blog"]
-tags: ["notice"]
+categories: ["Blog"]
+tags: ["Blog/Notice"]
 
 alias: []
 series: []

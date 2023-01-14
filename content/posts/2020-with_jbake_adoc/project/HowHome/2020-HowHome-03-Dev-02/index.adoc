@@ -19,8 +19,8 @@ images: []
 featuredImage: ""
 featuredImagePreview: ""
 
-categories: ["IT"]
-tags: ["프로젝트", "부동산"]
+categories: ["Project/HowHome"]
+tags: ["Side-Project", "RealEstate/APT"]
 
 alias: []
 series: []

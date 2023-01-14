@@ -19,8 +19,8 @@ images: []
 featuredImage: ""
 featuredImagePreview: ""
 
-categories: ["IT"]
-tags: ["학습", "데이터모델링"]
+categories: ["IT/DB/Architecture"]
+tags: ["Study-Group-Offline", "DB/Modeling"]
 
 alias: []
 series: []
