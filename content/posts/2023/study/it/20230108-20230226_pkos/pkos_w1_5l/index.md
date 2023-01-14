@@ -11,7 +11,7 @@ toc: true
 
 [PKOS 1주차 - 회고(5L)](../pkos_w1_5l)
 
-[PKOS 1주차 - Production Kubernetes Online Study 들어가며](../pkos_intro)
+[PKOS - Production Kubernetes Online Study 포스팅을 시작하며](../pkos_intro)
 
 [PKOS 1주차 - AWS kOps 설치 및 기본 사용](../pkos_w1_hands-on)
 
