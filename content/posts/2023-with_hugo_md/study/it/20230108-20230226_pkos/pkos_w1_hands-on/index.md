@@ -1,12 +1,29 @@
 ---
-date: 2023-01-12T22:27:51
-title: PKOS 1주차 - AWS kOps 설치 및 기본 사용
-author: 정민호
+date: 2023-01-12T22:27:51+09:00
+lastmod: 2023-01-12T22:27:51+09:00
+author: "MinHo Jung"
+authorLink: ""
+license: "CC BY-NC-ND 4.0"
+draft: false
+toc: true
+hiddenFromHomePage: false
+hiddenFromSearch: false
+linkToMarkdown: false
+rssFullText: false
+
+title: "PKOS 1주차 - AWS kOps 설치 및 기본 사용"
+subtitle: ""
+description: ""
+
+images: []
+featuredImage: ""
+featuredImagePreview: ""
+
 categories: ["IT/인프라"]
 tags: ["IT", "인프라", "쿠버네티스", "스터디"]
 
-draft: false
-toc: true
+alias: []
+series: []
 ---
 
 [PKOS 1주차 - 회고(5L)](../pkos_w1_5l)
