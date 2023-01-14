@@ -11,9 +11,17 @@ toc: true
 
 [PKOS 1주차 - 회고(5L)](../pkos_w1_5l)
 
-[PKOS 1주차 - Production Kubernetes Online Study 들어가며](../pkos_intro)
+[PKOS - Production Kubernetes Online Study 포스팅을 시작하며](../pkos_intro)
 
 [PKOS 1주차 - AWS kOps 설치 및 기본 사용](../pkos_w1_hands-on)
+
+---
+
+왜 그런지 모르겠는데 이미지 위아래로 여백이 생깁니다. 
+
+에디터에서는 안그러는데 왜 그런지 좀 찾아봐야겠습니다.
+
+본 글은 초안이기에 다듬는 과정에서 내용이 수정될 수 있습니다. 
 
 ---
 
