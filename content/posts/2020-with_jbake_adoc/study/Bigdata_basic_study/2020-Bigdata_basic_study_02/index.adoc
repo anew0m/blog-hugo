@@ -1,29 +1,19 @@
 ---
-date: 2020-05-09T00:00:00+09:00
-lastmod: 2020-05-09T00:00:00+09:00
-author: "MinHo Jung"
-authorLink: ""
-license: "CC BY-NC-ND 4.0"
-draft: false
-toc: true
-hiddenFromHomePage: false
-hiddenFromSearch: false
-linkToMarkdown: false
-rssFullText: false
-
 title: "빅데이터 관련 학습노트 - 02 - 의사결정트리(Decision Tree)"
 subtitle: "SK 동반성장아카데이 내 '머신러닝의 이해와 실습' 강의 정리"
 description: ""
-
+tags: ["학습", "빅데이터"]
+categories: ["IT"]
+date: 2020-05-09
+lastmod: 2020-05-09
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
 images: []
+
 featuredImage: ""
 featuredImagePreview: ""
-
-categories: ["IT"]
-tags: ["학습", "빅데이터"]
-
-alias: []
-series: []
 ---
 :idprefix:
 :toc:

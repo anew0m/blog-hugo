@@ -1,29 +1,19 @@
 ---
-date: 2020-02-28T00:00:00+09:00
-lastmod: 2020-02-28T00:00:00+09:00
-author: "MinHo Jung"
-authorLink: ""
-license: "CC BY-NC-ND 4.0"
-draft: false
-toc: true
-hiddenFromHomePage: false
-hiddenFromSearch: false
-linkToMarkdown: false
-rssFullText: false
-
 title: "어떡하집 프로젝트 - 아파트 정보 수집 계획(아파트 정보 수집 방안 수립-1)"
 subtitle: "공공데이터포털의 API를 이용해 아파트 정보를 수집합니다."
 description: ""
-
+tags: ["프로젝트", "부동산"]
+categories: ["IT"]
+date: 2020-02-28
+lastmod: 2020-02-28
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
 images: []
+
 featuredImage: ""
 featuredImagePreview: ""
-
-categories: ["IT"]
-tags: ["프로젝트", "부동산"]
-
-alias: []
-series: []
 ---
 :idprefix:
 :toc:

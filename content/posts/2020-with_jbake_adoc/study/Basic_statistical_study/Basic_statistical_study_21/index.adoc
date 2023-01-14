@@ -1,29 +1,19 @@
 ---
-date: 2020-05-24T00:00:00+09:00
-lastmod: 2020-05-24T00:00:00+09:00
-author: "MinHo Jung"
-authorLink: ""
-license: "CC BY-NC-ND 4.0"
-draft: false
-toc: true
-hiddenFromHomePage: false
-hiddenFromSearch: false
-linkToMarkdown: false
-rssFullText: false
-
 title: "기초 통계분석 - 21 - 표현 정리"
 subtitle: "R 통계분석(제대로 알고 쓰는) - 이윤환저'의 책을 통해 기초 통계분석 학습"
 description: ""
-
+tags: ["학습", "빅데이터"]
+categories: ["IT"]
+date: 2020-05-24
+lastmod: 2020-05-24
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
 images: []
+
 featuredImage: ""
 featuredImagePreview: ""
-
-categories: ["IT"]
-tags: ["학습", "빅데이터"]
-
-alias: []
-series: []
 ---
 :idprefix:
 :toc:

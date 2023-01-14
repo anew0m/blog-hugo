@@ -1,29 +1,12 @@
 ---
-date: 2023-01-08T23:50:00+09:00
-lastmod: 2023-01-08T23:50:00+09:00
-author: "MinHo Jung"
-authorLink: ""
-license: "CC BY-NC-ND 4.0"
-draft: false
-toc: true
-hiddenFromHomePage: false
-hiddenFromSearch: false
-linkToMarkdown: false
-rssFullText: false
-
-title: "PKOS 1주차 - 회고(5L)"
-subtitle: ""
-description: ""
-
-images: []
-featuredImage: ""
-featuredImagePreview: ""
-
+date: 2023-01-08T23:50:00
+title: PKOS 1주차 - 회고(5L)
+author: 정민호
 categories: ["IT/인프라"]
 tags: ["IT", "인프라", "쿠버네티스", "스터디"]
 
-alias: []
-series: []
+draft: false
+toc: true
 ---
 
 [PKOS 1주차 - 회고(5L)](../pkos_w1_5l)

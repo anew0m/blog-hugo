@@ -1,29 +1,12 @@
 ---
-date: 2023-01-13T23:56:34+09:00
-lastmod: 2023-01-13T23:56:34+09:00
-author: "MinHo Jung"
-authorLink: ""
-license: "CC BY-NC-ND 4.0"
-draft: false
-toc: true
-hiddenFromHomePage: false
-hiddenFromSearch: false
-linkToMarkdown: false
-rssFullText: false
-
-title: "블로그 재정비"
-subtitle: "subtitle"
-description: "description"
-
-images: []
-featuredImage: ""
-featuredImagePreview: ""
-
+date: 2023-01-13T23:56:34
+title: 블로그 재정비
+author: 정민호
 categories: ["blog"]
 tags: ["notice"]
 
-alias: []
-series: []
+draft: false
+toc: true
 ---
 
 ---

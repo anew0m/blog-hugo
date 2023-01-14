@@ -1,29 +1,19 @@
 ---
-date: 2021-05-17T00:00:00+09:00
-lastmod: 2021-05-17T00:00:00+09:00
-author: "MinHo Jung"
-authorLink: ""
-license: "CC BY-NC-ND 4.0"
-draft: false
-toc: true
-hiddenFromHomePage: false
-hiddenFromSearch: false
-linkToMarkdown: false
-rssFullText: false
-
 title: "(기초) 딥러닝 CNN - 들어가면서"
 subtitle: "섹션 1. 딥러닝 기반 이해 - 딥러닝 개요와 경사 하강법"
 description: ""
-
+tags: ["학습", "빅데이터"]
+categories: ["IT"]
+date: 2021-05-17
+lastmod: 2021-05-17
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
 images: []
+
 featuredImage: ""
 featuredImagePreview: ""
-
-categories: ["IT"]
-tags: ["학습", "빅데이터"]
-
-alias: []
-series: []
 ---
 :idprefix:
 :toc:

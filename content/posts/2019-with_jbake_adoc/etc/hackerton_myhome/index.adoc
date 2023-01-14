@@ -1,29 +1,19 @@
 ---
-date: 2019-09-21T00:00:00+09:00
-lastmod: 2019-09-21T00:00:00+09:00
-author: "MinHo Jung"
-authorLink: ""
-license: "CC BY-NC-ND 4.0"
-draft: false
-toc: true
-hiddenFromHomePage: false
-hiddenFromSearch: false
-linkToMarkdown: false
-rssFullText: false
-
 title: "내집마련 해커톤 참여 후기"
 subtitle: "내집마련 해커톤'을 통한 개인 블로그 제작 과정 소개"
 description: ""
-
+tags: ["hackerton"]
+categories: ["IT"]
+date: 2019-09-21
+lastmod: 2019-09-21
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
 images: []
+
 featuredImage: ""
 featuredImagePreview: ""
-
-categories: ["IT"]
-tags: ["hackerton"]
-
-alias: []
-series: []
 ---
 :idprefix:
 :toc:

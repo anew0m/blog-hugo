@@ -1,31 +1,4 @@
 ---
-date: +09:00
-lastmod: +09:00
-author: "MinHo Jung"
-authorLink: ""
-license: "CC BY-NC-ND 4.0"
-draft: false
-toc: true
-hiddenFromHomePage: false
-hiddenFromSearch: false
-linkToMarkdown: false
-rssFullText: false
-
-title: ""
-subtitle: ""
-description: ""
-
-images: []
-featuredImage: ""
-featuredImagePreview: ""
-
-categories: []
-tags: []
-
-alias: []
-series: []
----
----
 title: "(기초) AWS - API Gateway"
 subtitle: "AWS에 대해 알아봅니다."
 description: ""

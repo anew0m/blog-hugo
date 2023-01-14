@@ -1,29 +1,19 @@
 ---
-date: 2019-10-18T00:00:00+09:00
-lastmod: 2019-10-19T00:00:00+09:00
-author: "MinHo Jung"
-authorLink: ""
-license: "CC BY-NC-ND 4.0"
-draft: false
-toc: true
-hiddenFromHomePage: false
-hiddenFromSearch: false
-linkToMarkdown: false
-rssFullText: false
-
 title: "관계형 데이터 모델링 노트 2장"
 subtitle: "데이터모델링 도서인 `관계형 데이터 모델링 노트 개정판` 책의 `2장 엔터티 이야기` 요약 및 정리"
 description: ""
-
+tags: ["학습", "데이터모델링"]
+categories: ["IT"]
+date: 2019-10-18
+lastmod: 2019-10-19
+draft: false
+author: "MinHo"
+authorLink: "https://rocketdan.netlify.app/"
+license: "CC BY-NC-ND 4.0"
 images: []
+
 featuredImage: ""
 featuredImagePreview: ""
-
-categories: ["IT"]
-tags: ["학습", "데이터모델링"]
-
-alias: []
-series: []
 ---
 :idprefix:
 :toc:
