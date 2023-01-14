@@ -1,19 +1,29 @@
 ---
+date: 2020-03-22T00:00:00+09:00
+lastmod: 2020-03-22T00:00:00+09:00
+author: "MinHo Jung"
+authorLink: ""
+license: "CC BY-NC-ND 4.0"
+draft: false
+toc: true
+hiddenFromHomePage: false
+hiddenFromSearch: false
+linkToMarkdown: false
+rssFullText: false
+
 title: "어떡하집 프로젝트 - 1차 시스템 구축 계획"
 subtitle: "버추얼박스에서 OS를 설치하고 DB를 설치하여 주소 데이터를 저장합니다."
 description: ""
-tags: ["프로젝트", "부동산"]
-categories: ["IT"]
-date: 2020-03-22
-lastmod: 2020-03-22
-draft: false
-author: "MinHo"
-authorLink: "https://rocketdan.netlify.app/"
-license: "CC BY-NC-ND 4.0"
-images: []
 
+images: []
 featuredImage: ""
 featuredImagePreview: ""
+
+categories: ["IT"]
+tags: ["프로젝트", "부동산"]
+
+alias: []
+series: []
 ---
 :idprefix:
 :toc:

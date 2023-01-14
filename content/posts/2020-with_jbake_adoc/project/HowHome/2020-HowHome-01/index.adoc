@@ -1,19 +1,29 @@
 ---
+date: 2020-02-13T00:00:00+09:00
+lastmod: 2020-02-13T00:00:00+09:00
+author: "MinHo Jung"
+authorLink: ""
+license: "CC BY-NC-ND 4.0"
+draft: false
+toc: true
+hiddenFromHomePage: false
+hiddenFromSearch: false
+linkToMarkdown: false
+rssFullText: false
+
 title: "어떡하집 프로젝트 구상"
 subtitle: "향후 내집마련에 관련된 인사이트를 얻기위해 프로젝트를 진행하려고 합니다."
 description: ""
-tags: ["프로젝트", "부동산"]
-categories: ["IT"]
-date: 2020-02-13
-lastmod: 2020-02-13
-draft: false
-author: "MinHo"
-authorLink: "https://rocketdan.netlify.app/"
-license: "CC BY-NC-ND 4.0"
-images: []
 
+images: []
 featuredImage: ""
 featuredImagePreview: ""
+
+categories: ["IT"]
+tags: ["프로젝트", "부동산"]
+
+alias: []
+series: []
 ---
 :idprefix:
 :toc:

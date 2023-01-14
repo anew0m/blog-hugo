@@ -1,19 +1,29 @@
 ---
+date: 2020-09-21T00:00:00+09:00
+lastmod: 2020-09-21T00:00:00+09:00
+author: "MinHo Jung"
+authorLink: ""
+license: "CC BY-NC-ND 4.0"
+draft: false
+toc: true
+hiddenFromHomePage: false
+hiddenFromSearch: false
+linkToMarkdown: false
+rssFullText: false
+
 title: "핸즈온 머신러닝 1장 한눈에 보는 머신러닝 - 1.6 테스트와 검증"
 subtitle: "데이터분석 관련 책 `핸즈온 머신러닝 2판`의 1장 1.6절 테스트와 검증 요약 및 정리"
 description: ""
-tags: ["학습", "빅데이터"]
-categories: ["IT"]
-date: 2020-09-21
-lastmod: 2020-09-21
-draft: false
-author: "MinHo"
-authorLink: "https://rocketdan.netlify.app/"
-license: "CC BY-NC-ND 4.0"
-images: []
 
+images: []
 featuredImage: ""
 featuredImagePreview: ""
+
+categories: ["IT"]
+tags: ["학습", "빅데이터"]
+
+alias: []
+series: []
 ---
 :idprefix:
 :toc:
