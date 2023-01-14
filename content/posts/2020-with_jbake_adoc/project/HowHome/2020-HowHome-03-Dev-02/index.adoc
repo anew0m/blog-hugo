@@ -1,19 +1,29 @@
 ---
+date: 2020-09-13T00:00:00+09:00
+lastmod: 2020-09-13T00:00:00+09:00
+author: "MinHo Jung"
+authorLink: ""
+license: "CC BY-NC-ND 4.0"
+draft: false
+toc: true
+hiddenFromHomePage: false
+hiddenFromSearch: false
+linkToMarkdown: false
+rssFullText: false
+
 title: "어떡하집 프로젝트 - 근황"
 subtitle: "오랜기간 멈춰있던 시스템 개발의 근황을 전달드립니다."
 description: ""
-tags: ["프로젝트", "부동산"]
-categories: ["IT"]
-date: 2020-09-13
-lastmod: 2020-09-13
-draft: false
-author: "MinHo"
-authorLink: "https://rocketdan.netlify.app/"
-license: "CC BY-NC-ND 4.0"
-images: []
 
+images: []
 featuredImage: ""
 featuredImagePreview: ""
+
+categories: ["IT"]
+tags: ["프로젝트", "부동산"]
+
+alias: []
+series: []
 ---
 :idprefix:
 :toc:
