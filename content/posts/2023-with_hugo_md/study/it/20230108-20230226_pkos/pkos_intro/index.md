@@ -26,11 +26,13 @@ alias: []
 series: []
 ---
 
-[PKOS 1주차 - 회고(5L)](../pkos_w1_5l)
+[PKOS 1주차 - 회고(4L)](../pkos_w1_4l)
 
 [PKOS - Production Kubernetes Online Study 포스팅을 시작하며](../pkos_intro)
 
 [PKOS 1주차 - AWS kOps 설치 및 기본 사용](../pkos_w1_hands-on)
+
+[PKOS 2주차 - 회고(4L)](../pkos_w2_4l)
 
 ---
 
