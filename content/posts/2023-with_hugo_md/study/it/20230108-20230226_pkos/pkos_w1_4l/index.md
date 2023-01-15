@@ -1,6 +1,6 @@
 ---
 date: 2023-01-08T23:50:00+09:00
-lastmod: 2023-01-08T23:50:00+09:00
+lastmod: 2023-01-16T12:46:00+09:00
 author: "MinHo Jung"
 authorLink: ""
 license: "CC BY-NC-ND 4.0"
@@ -11,7 +11,7 @@ hiddenFromSearch: false
 linkToMarkdown: false
 rssFullText: false
 
-title: "PKOS 1주차 - 회고(5L)"
+title: "PKOS 1주차 - 회고(4L)"
 subtitle: ""
 description: ""
 
@@ -26,11 +26,13 @@ alias: []
 series: []
 ---
 
-[PKOS 1주차 - 회고(5L)](../pkos_w1_5l)
+[PKOS 1주차 - 회고(4L)](../pkos_w1_4l)
 
 [PKOS - Production Kubernetes Online Study 포스팅을 시작하며](../pkos_intro)
 
 [PKOS 1주차 - AWS kOps 설치 및 기본 사용](../pkos_w1_hands-on)
+
+[PKOS 2주차 - 회고(4L)](../pkos_w2_4l)
 
 ---
 
