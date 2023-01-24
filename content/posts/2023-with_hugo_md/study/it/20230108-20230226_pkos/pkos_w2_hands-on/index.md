@@ -151,7 +151,7 @@ series: []
 
    - 파라미터
 
-     - ##### <<<<< Deploy EC2 : kops-ec2 >>>>>
+     - <<<<< Deploy EC2 : kops-ec2 >>>>>
 
        - 설정 설명
          - KeyName : kops-ec2에 SSH 접속을 위한 SSH 키페어 선택 *<- 미리 SSH 키 생성 해두자!*
@@ -163,7 +163,7 @@ series: []
          - 사용자 설정 입력
        - ![image-20230124193414257](files/img/image-20230124193414257.png)
 
-     - ##### <<<<< AWS kOps Config >>>>>
+     - <<<<< AWS kOps Config >>>>>
 
        - 설정 설명
 
@@ -189,7 +189,7 @@ series: []
 
        - ![image-20230124204019684](files/img/image-20230124204019684.png)
 
-     - ##### <<<<< Region AZ >>>>>
+     - <<<<< Region AZ >>>>>
 
        - 설정 설명
          - TargetRegion : kOps를 배포할 리전
