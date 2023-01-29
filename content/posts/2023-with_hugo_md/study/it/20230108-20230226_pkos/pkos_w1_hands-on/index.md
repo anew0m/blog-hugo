@@ -34,6 +34,12 @@ series: []
 
 [PKOS 2주차 - 회고(4L)](../pkos_w2_4l)
 
+[PKOS 2주차 - 쿠버네티스 네트워크](../pkos_w2_hands-on)
+
+[PKOS 3주차 - 회고(4L)](../pkos_w3_4l)
+
+[PKOS 3주차 - Ingress & Storage](../pkos_w3_hands-on)
+
 ---
 
 왜 그런지 모르겠는데 이미지 위아래로 여백이 생깁니다. 
