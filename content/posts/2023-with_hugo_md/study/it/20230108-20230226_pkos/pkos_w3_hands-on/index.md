@@ -22,8 +22,8 @@ featuredImagePreview: ""
 categories: ["IT/Kubernetes"]
 tags: ["Study-Group-Online", "CloudNet@", "Gasida/PKOS"]
 
-alias: ["쿠버네티스", "Kubernetes", "kubernetes", "K8s", "k8s"]
-series: ["PKOS"]
+alias: []
+series: []
 ---
 
 [PKOS 1주차 - 회고(4L)](../pkos_w1_4l)
@@ -84,5 +84,4 @@ series: ["PKOS"]
 #### 과제4
 
 - 목표 : AWS Volume SnapShots 실습 후 관련 스샷 올려주세요
-
 
