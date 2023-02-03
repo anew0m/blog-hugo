@@ -22,8 +22,8 @@ featuredImagePreview: ""
 categories: ["IT/Kubernetes"]
 tags: ["Study-Group-Online", "CloudNet@", "Gasida/PKOS"]
 
-alias: ["쿠버네티스", "Kubernetes", "kubernetes", "K8s", "k8s"]
-series: ["PKOS"]
+alias: []
+series: []
 ---
 
 
