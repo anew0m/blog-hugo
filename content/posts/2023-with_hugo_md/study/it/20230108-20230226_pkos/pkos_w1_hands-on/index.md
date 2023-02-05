@@ -40,6 +40,10 @@ series: []
 
 [PKOS 3주차 - Ingress & Storage](../pkos_w3_hands-on)
 
+[PKOS 4주차 - 회고(4L)](../pkos_w4_4l)
+
+[PKOS 4주차 - Harbor & Gitlab & ArgoCD](../pkos_w4_hands-on)
+
 ---
 
 왜 그런지 모르겠는데 이미지 위아래로 여백이 생깁니다. 

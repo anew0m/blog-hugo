@@ -26,8 +26,6 @@ alias: []
 series: []
 ---
 
-
-
 [PKOS 1주차 - 회고(4L)](../pkos_w1_4l)
 
 [PKOS - Production Kubernetes Online Study 포스팅을 시작하며](../pkos_intro)
@@ -40,7 +38,11 @@ series: []
 
 [PKOS 3주차 - 회고(4L)](../pkos_w3_4l)
 
-[PKOS 3주차 - Ingress & Storage](../pkos_w2_hands-on)
+[PKOS 3주차 - Ingress & Storage](../pkos_w3_hands-on)
+
+[PKOS 4주차 - 회고(4L)](../pkos_w4_4l)
+
+[PKOS 4주차 - Harbor & Gitlab & ArgoCD](../pkos_w4_hands-on)
 
 ---
 
