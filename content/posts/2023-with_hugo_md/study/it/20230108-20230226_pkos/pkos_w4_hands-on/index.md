@@ -44,6 +44,10 @@ series: []
 
 [PKOS 4주차 - Harbor & Gitlab & ArgoCD](../pkos_w4_hands-on)
 
+[PKOS 5주차 - 회고(4L)](../pkos_w5_4l)
+
+[PKOS 5주차 - Prometheus & Grafana](../pkos_w5_hands-on)
+
 ---
 
 왜 그런지 모르겠는데 이미지 위아래로 여백이 생깁니다.

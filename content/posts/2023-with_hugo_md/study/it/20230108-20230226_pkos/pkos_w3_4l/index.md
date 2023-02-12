@@ -44,6 +44,10 @@ series: []
 
 [PKOS 4주차 - Harbor & Gitlab & ArgoCD](../pkos_w4_hands-on)
 
+[PKOS 5주차 - 회고(4L)](../pkos_w5_4l)
+
+[PKOS 5주차 - Prometheus & Grafana](../pkos_w5_hands-on)
+
 ---
 
 ## Liked: 좋았던 점
