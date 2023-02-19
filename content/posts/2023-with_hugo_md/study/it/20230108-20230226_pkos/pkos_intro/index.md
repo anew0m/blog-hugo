@@ -48,6 +48,10 @@ series: []
 
 [PKOS 5주차 - Prometheus & Grafana](../pkos_w5_hands-on)
 
+[PKOS 6주차 - 회고(4L)](../pkos_w6_4l)
+
+[PKOS 6주차 - Alert Manager & Logging System](../pkos_w6_hands-on)
+
 ---
 
 # PKOS
