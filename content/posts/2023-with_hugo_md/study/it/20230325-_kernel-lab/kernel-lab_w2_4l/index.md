@@ -74,3 +74,12 @@ Linked-List는 이미 알고 있었지만, 탐색하는 코드에서 동시성�
 
 
 
+----
+
+리눅스 커널 코드 규칙
+
+- [Linux kernel coding style](https://www.kernel.org/doc/html/latest/process/coding-style.html)
+  - https://www.kernel.org/doc/html/latest/process/coding-style.html
+- [Linux-Tutorial-2-리눅스-커널-코딩-스타일-1장](https://velog.io/@mythos/Linux-Tutorial-2-%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%BB%A4%EB%84%90-%EC%BD%94%EB%94%A9-%EC%8A%A4%ED%83%80%EC%9D%BC-1%EC%9E%A5)
+  - https://velog.io/@mythos/Linux-Tutorial-2-리눅스-커널-코딩-스타일-1장
+
