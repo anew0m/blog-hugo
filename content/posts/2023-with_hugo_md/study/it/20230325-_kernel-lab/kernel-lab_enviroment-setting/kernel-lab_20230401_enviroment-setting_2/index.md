@@ -1,6 +1,6 @@
 ---
 date: 2023-04-01T21:52:07+09:00
-lastmod: 2023-04-07T23:35:07+09:00
+lastmod: 2023-04-07T23:41:07+09:00
 author: "MinHo Jung"
 authorLink: ""
 license: "CC BY-NC-ND 4.0"
@@ -248,7 +248,7 @@ tags: ["Study-Group-Offline", "Modulabs", "커널연구회", "JaeJoon Jung/Kerne
      - ![image-20230407204831377](files/img/image-20230407204831377.png)
    - 따라서 공유기에서 버추얼 박스를 운용중인 컴퓨터에 대해 포트포워딩 설정을 해주어야합니다.
      - ![image-20230407205529087](files/img/image-20230407205529087.png)
-     - ![image-20230407205538585](files/img/image-20230407205538585.png)
+     - ![image-20230407234051603](files/img/image-20230407234051603.png)
    - 그리고 버추얼 박스에서 포트포워딩 설정을 해주어야 합니다.
      - ![image-20230407210252957](files/img/image-20230407210252957.png)
    - 접속 확인
@@ -258,7 +258,7 @@ tags: ["Study-Group-Offline", "Modulabs", "커널연구회", "JaeJoon Jung/Kerne
      - ![image-20230407210506960](files/img/image-20230407210506960.png)
    - 따라서 공유기에서 가상 컴퓨터 IP에 대해 포트포워딩을 해주어야하며, 가상 컴퓨터 IP를 가급적 고정 IP로 설정 해주시는 것이 좋습니다.
      - ![image-20230407205529087](files/img/image-20230407205529087.png)
-     - ![image-20230407205538585](files/img/image-20230407205538585.png)
+     - ![image-20230407234051603](files/img/image-20230407234051603.png)
 
 
 
